@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bowling</title>
+</head>
+<body>
+    <h1>Let's Bowl</h1>
+    <input type="submit" value="bowl" onclick="letsBowl()">
+    <h2>Frames</h2>
+    <div id="frames">Frame scores go here</div>
+    <label>Total</label><input type="text" id="totalbox">
+    <script>
+
+        function letsBowl() {
+        
+        let frameArray = [];
+        let totalScore = 0;
+
+        for (let i=0; i<=10; i++) {
+            let s = Math.floor(Math.random() * 11);
+            frameArray.push(s);
+            totalScore+=s;
+        } 
+        console.log(frameArray + " total: " +totalScore);
+        if (totalScore > 89) {
+            console.log("HUUUUUUUUUUUUUUUUUGE")
+            console.log("HUUUUUUUUUUUUUUUUUGE")
+            console.log("HUUUUUUUUUUUUUUUUUGE")
+            console.log("HUUUUUUUUUUUUUUUUUGE")
+            console.log("HUUUUUUUUUUUUUUUUUGE")
+            console.log("HUUUUUUUUUUUUUUUUUGE")
+            
+        }    
+        document.getElementById("frames").innerHTML = frameArray;
+        document.getElementById("totalbox").value = totalScore;
+        }
+
+    </script>
+</body>
+</html>

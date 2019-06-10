@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Number Incrementer</title>
+</head>
+<body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div align="center">
+    <input type="button" value="-" id="dec" style="margin:10px" onclick="decrement()">
+    <input type="text" value=0 id="out" style="padding:10px; text-align: center; font-size:1.4em">
+    <input type="button" value="+" id="inc" style="margin:10px" onclick="increment()">
+    </div>
+
+    <script>
+        evenOrOdd();
+        threes();
+        sevens();
+
+        function increment() {
+            let n = document.getElementById("out").value;
+            n++;
+            document.getElementById("out").value = n;
+            evenOrOdd();
+        }
+
+        function decrement() {
+            let n = document.getElementById("out").value;
+            n--;
+            document.getElementById("out").value = n;
+            evenOrOdd();
+        }
+
+        function evenOrOdd() {
+            
+
+            if ((document.getElementById("out").value % 2) == 0) {
+            document.getElementById("out").style.setProperty('color', 'red');
+            document.getElementById("out").style.setProperty('font-style', 'normal');
+            } else {
+                document.getElementById("out").style.setProperty('color', 'black');
+            }
+            
+            if ((document.getElementById("out").value % 3) == 0) {
+            document.getElementById("out").style.setProperty('font-style', 'italic');
+            } else {
+                document.getElementById("out").style.setProperty('font-style', 'normal');
+            }
+
+            if ((document.getElementById("out").value % 7) == 0) {
+            document.getElementById("out").style.setProperty('font-size', '2.5em');
+            } else {
+                document.getElementById("out").style.setProperty('font-size', '1.4em');
+            }
+
+            if (document.getElementById("out").value == 0) {
+                document.getElementById("out").style.setProperty('color', 'black');
+                document.getElementById("out").style.setProperty('font-style', 'normal');
+                document.getElementById("out").style.setProperty('font-size', '1.4em');
+            }
+
+    
+            
+        }
+
+    
+
+        // if ((document.getElementById("out").value % 2) == 0) {
+        //     document.getElementById("out").style="color:red";
+        // } else {
+        //     document.getElementById("out").style="color:black";
+        // }
+
+    </script>
+
+</body>
+</html>
