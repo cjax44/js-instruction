@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Text Populator</title>
+</head>
+<body>
+    <br />
+    <br />
+    <br />
+    <table align="center" style="text-align: left">
+        <tr>
+        <td>Top:</td><td><input type="text" ID="in" value="Insert text in top box"></input></td></tr>
+        <tr><td>Bottom:</td><td><textarea ID="out"></textarea></td></tr>
+    </table> <br />
+    <div align="center">
+    <button onclick="change()">Move to Bottom Box</button>
+</div>
+    <script>
+        function change() {
+        document.getElementById("out").innerHTML = document.getElementById("in").value;
+        };
+    </script>
+</body>
+</html>
