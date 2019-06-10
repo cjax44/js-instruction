@@ -4,9 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Mouse Trail</title>
 </head>
 <body>
-    
+    <style>
+        .trail { /* className for the trail elements */
+            position: absolute;
+            background-color: red;
+            height: 30px;
+            transform: rotate(-45deg);
+            width: 30px;
+        }
+
+
+        .trail:before,
+        .trail:after {
+        content: "";
+        background-color: red;
+        border-radius: 50%;
+        height: 30px;
+        position: absolute;
+        width: 30px;
+        top: 0;
+        right: -20px
+        }
+
+        .trail:before {
+        top: -20px;
+        left: 0;
+        }
+        
+
+        body {
+            height: 300px;
+        }
+    </style>
+
+    <script>
+        let dots = [];
+        for (let i = 0; i < 42; i++) {
+            let node = document.createElement("div");
+            node.className = "trail";
+            document.body.appendChild(node);
+            dots.push(node);
+        }
+        let currentDot = 0;
+        
+        window.addEventListener("mousemove", event => {
+            let dot = dots[currentDot];
+            dot.style.left = (event.pageX - 3) + "px";
+            dot.style.top = (event.pageY - 3) + "px";
+            currentDot = (currentDot + 1) % dots.length;
+        });
+    </script>
 </body>
 </html>
